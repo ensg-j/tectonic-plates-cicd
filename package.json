@@ -6,7 +6,10 @@
   "devDependencies": {
     "jshint": "^2.6.0"
   },
-  "scripts": {
-    "test": "jshint hello.js"
-  }
+  "script": [
+    "pm test"
+  ],
+  "install": [
+    "npm install"
+  ],
 }
