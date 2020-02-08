@@ -15,3 +15,11 @@ jobs:
     - stage: deploy
       script:
         - echo 'Success!!'
+stages:
+  - name: install
+  - name: test
+    # require the type to be a PR
+    if: type = pull_request
+  - name: deploy
+    # require the type to be push to master
+    if: type = push AND branch = master
