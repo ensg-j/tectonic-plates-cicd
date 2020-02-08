@@ -1,0 +1,153 @@
+/* Paramètres généraux de la page */
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Conteneur du globe*/
+.container {
+  position: relative;
+}
+
+/*Style du titre*/
+.titre {
+  position: absolute;
+  top: 8px;
+  right: 100px;
+  font-size: 35px;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Style du sous-titre*/
+.soustitre {
+  position: absolute;
+  top: 50px;
+  right: 70px;
+  font-size: 18px;
+  font-family: 'EB Garamond', serif;
+  width: 300px;
+}
+/* Taille du globe*/
+.canvas {
+  width:80%;
+  height: 110%;
+
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*Navigation coulissante*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 60px;
+  background: linear-gradient(#3a4660, #3a4690);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+
+/*Navigation fixe */
+.simplesidenav {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#3a4660, #3a4690);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.simplesidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.simplesidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+/*Pour petit écran*/
+@media screen and (max-width: 1115px) {
+  .titre {
+    position: absolute;
+    top: 8px;
+    right: 45px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .soustitre {
+    position: absolute;
+    top: 50px;
+    right: 45px;
+    font-size: 18px;
+    font-family: 'EB Garamond', serif;
+    width:180px;
+  }
+
+}
+
+/*Pour un écran encore plus petit*/
+@media screen and (max-width: 750px) {
+  .sidenav {display : none;}
+  .simplesidenav {display : none;}
+  .nav_position{display : none;}
+
+  .titre {
+
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .soustitre {
+    display : none;
+  }
+}
