@@ -2,10 +2,16 @@ language: node_js
 node_js:
  - "node"
 cache: yarn
-install:
-  - npm install
-script:
-  - yarn
-  - npm test
-after_success:
- - echo 'Success!!'
+
+jobs:
+  include:
+    - stage: intall
+      script:
+        - npm install
+    - stage: test
+      script:
+        - yarn
+        - yarn test
+    - stage: deploy
+      script:
+        - echo 'Success!!'
