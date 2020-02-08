@@ -1,9 +1,11 @@
 language: node_js
 node_js:
  - "node"
+cache: yarn
 install:
   - npm install
 script:
+  - yarn
   - npm test
 after_success:
  - echo 'Success!!'
