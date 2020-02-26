@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+ - "node"
+cache: yarn
+
+jobs:
+  include:
+    - stage: intall
+      script:
+        - npm install
+    - stage: test
+      script:
+        - npm-run-all --parallel testFirefox testPhantonJS
+        - yarn
+        - yarn test
+    - stage: deploy
+      script:
+        - npm run generatedoc
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN  
+        keep_history: true
+        on:
+          branch: master
+stages:
+  - name: install
+  - name: test
+    # require the type to be a PR
+    if: type = pull_request
+  - name: deploy
+    # require the type to be push to master
+    if: type = push AND branch = master
