@@ -15,7 +15,14 @@ jobs:
         - yarn test
     - stage: deploy
       script:
-        - echo 'Success!!'
+        - npm run generatedoc
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+        keep_history: true
+        on:
+          branch: master
 stages:
   - name: install
   - name: test
@@ -24,3 +31,5 @@ stages:
   - name: deploy
     # require the type to be push to master
     if: type = push AND branch = master
+
+d

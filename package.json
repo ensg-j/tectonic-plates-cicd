@@ -9,11 +9,13 @@
   },
   "scripts": {
     "testFirefox": "./node_modules/.bin/karma start --browsers Firefox --single-run",
-    "testPhantonJS": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "testPhantonJS": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "generatedoc" : "./node_modules/.bin/jsdoc ./ressources/ww.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "formidable": "^1.2.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "jsdoc": "^3.6.3"
   }
 }

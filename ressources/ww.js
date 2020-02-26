@@ -96,6 +96,11 @@ wwd.deepPicking = true; // On va choisir des éléments
 // Elements cliqués
 var highlightedItems = [];
 
+/**
+ * Enables the selection of the tectonic plate
+ * @param {evement} ev, the click of the user
+ * 
+ */
 // Fonction qui sera lancée au click sur une plaque : Elle affiche les contours et l'axe de rotation
 function selection (ev) {
  var date2 = new Date().getTime();
@@ -141,6 +146,9 @@ function selection (ev) {
 }
 };
 
+/**
+ * Deselects every tectonic plate
+ */
 //Fonction permettant de deselectionner toutes plaques
 function deselection() {
   for (var h = 0; h < highlightedItems.length; h++) { // On déselectionne les plaques sélectionnés
@@ -149,6 +157,9 @@ function deselection() {
     axes_rotation[a].enabled = false;}
 }
 
+/**
+ * Displays rotation axis
+ */
 // Fonction affichant tous les axes de rotation
 function affichae_axes_rotation() {
   for (var p = 0; p < axes_rotation.length; p++) {// On parcours la liste des axes de rotation
@@ -169,6 +180,11 @@ wwd.addEventListener("mousedown",startCounting);// Quand on appuie sur le bouton
 wwd.addEventListener("mouseup",selection); // Quand on relache le bouton, on lance la fonction d'affichage des contours de la plaque cliquée et son axe de rotation
 
 
+/**
+ * Launches the roration of the globe
+ * @param {float} x2, latitude of the axis
+ * @param {float} y2, longitutde of the axis
+ */
 function animation (x2,y2) {
   // Fonction qui réalise l'animation de la rotation de la sphère
   var diffx = wwd.navigator.lookAtLocation.latitude-x2; var rapx = diffx/100000;
@@ -182,11 +198,17 @@ function animation (x2,y2) {
   }
 }
 
-
+/**
+ * Enables opening the navigation
+ */
 //Gestion de la navigation sur le côté
 function openNav() {// On ouvre la navigation
   document.getElementById("mySidenav").style.width = "250px";
 }
+
+/**
+ * Enables closing the navigation
+ */
 
 function closeNav() {// On ferme la navigation
   document.getElementById("mySidenav").style.width = "0";
