@@ -4,11 +4,12 @@
   "author": "your name here :-)",
   "version": "0.0.1",
   "devDependencies": {
-    "jshint": "^2.6.0"
+    "karma": "~0.8"
   },
   "scripts": {
-    "test": "jshint hello.js"
-  },
+    "testFirefox": "./node_modules/.bin/karma start --browsers Firefox --single-run",
+    "testPhantonJS": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+ },
   "dependencies": {
     "express": "^4.17.1",
     "formidable": "^1.2.1",

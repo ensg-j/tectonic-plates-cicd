@@ -10,6 +10,7 @@ jobs:
         - npm install
     - stage: test
       script:
+        - npm-run-all --parallel testFirefox testPhantonJS
         - yarn
         - yarn test
     - stage: deploy
