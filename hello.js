@@ -18,7 +18,7 @@ app.post('/', function (req, res){
     //res.writeHead(200, {'content-type': 'text/html'});
 
     fs.readFile(files.upload.path, function (err, data) {
-      fs.writeFile('ressources/currentfile.geojson',data,function (err) {
+      fs.writeFile('ressources/currentfile.geojson',data,function (err) 
         if (err) throw err;
         console.log('File is created successfully.');
       });
