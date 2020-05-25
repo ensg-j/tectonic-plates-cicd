@@ -5,7 +5,7 @@ cache: yarn
 
 jobs:
   include:
-    - stage: intall
+    - stage: install
       script:
         - npm install
     - stage: test
